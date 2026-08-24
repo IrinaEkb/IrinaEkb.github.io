@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Irina Fendley — Portfolio</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
     /* ── TOKENS ───────────────────────────────────────────── */
     :root {
@@ -18,8 +20,17 @@
       --radius:   12px;
       --nav-h:    64px;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
@@ -29,27 +40,45 @@
 
     /* ── NAV ──────────────────────────────────────────────── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
       height: var(--nav-h);
       background: rgba(13,13,13,.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0 40px;
     }
+
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 1.1rem;
-      color: var(--text); text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
     }
-    .nav-links { display: flex; gap: 8px; }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+    }
+
     .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: .9rem; font-weight: 500;
-      padding: 8px 16px; border-radius: 99px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 99px;
       border: 1px solid transparent;
       transition: all .2s;
     }
+
     .nav-links a:hover {
       color: var(--text);
       border-color: var(--border);
@@ -57,381 +86,801 @@
     }
 
     /* ── SECTIONS ─────────────────────────────────────────── */
-    section { padding: 100px 40px; max-width: 1000px; margin: 0 auto; }
-    section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
+    section {
+      padding: 100px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section:first-of-type {
+      padding-top: calc(var(--nav-h) + 80px);
+    }
 
     h2.section-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem; font-weight: 700;
+      font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 48px;
       color: var(--text);
     }
-    h2.section-title span { color: var(--accent); }
+
+    h2.section-title span {
+      color: var(--accent);
+    }
 
     /* ── HERO ─────────────────────────────────────────────── */
     #hero {
       display: grid;
       grid-template-columns: 1fr 260px;
-      gap: 60px; align-items: center;
+      gap: 60px;
+      align-items: center;
     }
+
     .hero-tag {
       display: inline-block;
-      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--accent2);
       background: rgba(124,106,255,.12);
       border: 1px solid rgba(124,106,255,.3);
-      padding: 4px 12px; border-radius: 99px;
+      padding: 4px 12px;
+      border-radius: 99px;
       margin-bottom: 20px;
     }
+
     .hero-text h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 700; line-height: 1.15;
+      font-weight: 700;
+      line-height: 1.15;
       margin-bottom: 20px;
     }
+
     .hero-text h1 em {
-      font-style: normal; color: var(--accent);
+      font-style: normal;
+      color: var(--accent);
     }
+
     .hero-text p {
-      color: var(--muted); font-size: 1rem; max-width: 500px;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 500px;
       margin-bottom: 32px;
     }
-    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 11px 22px; border-radius: 8px;
-      font-size: .9rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
       transition: all .2s;
     }
+
     .btn-primary {
-      background: var(--accent); color: #fff;
+      background: var(--accent);
+      color: #fff;
     }
-    .btn-primary:hover { background: #6a58e8; transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      background: #6a58e8;
+      transform: translateY(-1px);
+    }
+
     .btn-outline {
-      background: transparent; color: var(--text);
+      background: transparent;
+      color: var(--text);
       border: 1px solid var(--border);
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
 
     .hero-photo {
       position: relative;
     }
+
     .hero-photo img {
-      width: 100%; aspect-ratio: 1/1;
-      object-fit: cover; border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
       border: 3px solid var(--border);
       display: block;
     }
-    /* placeholder when no photo */
+
     .hero-photo .photo-placeholder {
-      width: 100%; aspect-ratio: 1/1; border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
       background: var(--surface);
       border: 3px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: .85rem; text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
       padding: 20px;
     }
 
     /* ── PROJECTS ─────────────────────────────────────────── */
-    .projects-grid { display: flex; flex-direction: column; gap: 28px; }
-   .project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  transition: border-color .2s, transform .2s;
-}
+    .projects-section {
+      margin-bottom: 10px;
+    }
+
+    .project-view-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .project-view-description {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 26px;
+      max-width: 700px;
+    }
+
+    /* ── BUSINESS / EXECUTIVE PROJECTS ───────────────────── */
+    .business-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 70px;
+    }
+
+    .business-project {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .business-project:hover {
+      border-color: rgba(124,106,255,.4);
+      transform: translateY(-1px);
+    }
+
+    .business-project-info {
+      min-width: 0;
+    }
+
+    .business-project-info h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .business-project-info p {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .business-project .btn {
+      flex-shrink: 0;
+    }
+
+    /* ── TECHNICAL PROJECTS ──────────────────────────────── */
+    .technical-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      transition: border-color .2s, transform .2s;
+    }
+
     .project-card:hover {
       border-color: rgba(124,106,255,.4);
       transform: translateY(-2px);
     }
-    .project-card.featured { border-color: rgba(124,106,255,.3); }
+
+    .project-card.featured {
+      border-color: rgba(124,106,255,.3);
+    }
+
     .project-img {
       background: #1a1a2e;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 200px;
     }
+
     .project-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-    .project-img .img-placeholder {
-      width: 100%; height: 100%; min-height: 200px;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: .8rem;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
-    .project-info { padding: 28px 32px; display: flex; flex-direction: column; }
+
+    .project-img .img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .project-info {
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
     .project-badge {
-      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--accent);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 8px;
     }
+
     .project-info h3 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem; font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 10px;
     }
+
     .project-info p {
-      color: var(--muted); font-size: .9rem; flex: 1;
+      color: var(--muted);
+      font-size: .9rem;
+      flex: 1;
       margin-bottom: 20px;
     }
+
     .stack-list {
-      display: flex; flex-wrap: wrap; gap: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
       margin-bottom: 24px;
     }
+
     .stack-tag {
-      font-size: .75rem; font-weight: 500;
-      padding: 3px 10px; border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 99px;
       background: rgba(124,106,255,.1);
       border: 1px solid rgba(124,106,255,.2);
       color: var(--accent2);
     }
-    .project-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
     /* ── DIVIDER ──────────────────────────────────────────── */
     .divider {
-      width: 100%; height: 1px;
-      background: linear-gradient(to right, transparent, var(--border), transparent);
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--border),
+        transparent
+      );
       margin: 0 auto;
     }
 
     /* ── FOOTER ───────────────────────────────────────────── */
     footer {
-      text-align: center; padding: 40px;
-      color: var(--muted); font-size: .85rem;
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+      font-size: .85rem;
       border-top: 1px solid var(--border);
     }
-    footer a { color: var(--accent2); text-decoration: none; }
+
+    footer a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 700px) {
-      nav { padding: 0 20px; }
-      section { padding: 80px 20px; }
-      #hero { grid-template-columns: 1fr; }
-      .hero-photo { order: -1; width: 160px; margin: 0 auto; }
-      .project-card { grid-template-columns: 1fr; }
-      .project-img { min-height: 180px; }
+      nav {
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      #hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        order: -1;
+        width: 160px;
+        margin: 0 auto;
+      }
+
+      .business-project {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .business-project .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-img {
+        min-height: 180px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ═══════════════════ NAV ═══════════════════ -->
-<nav>
-  <a class="nav-logo" href="#">Irina Fendley</a>
-  <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-  </div>
-</nav>
+  <!-- ═══════════════════ NAV ═══════════════════ -->
+  <nav>
+    <a class="nav-logo" href="#">Irina Fendley</a>
 
-<!-- ═══════════════════ HERO / ABOUT ═════════════════════ -->
-<section id="about">
-  <div id="hero">
-    <div class="hero-text">
-      <span class="hero-tag">Open to opportunities</span>
-      <h1>
-        Hi, I'm <em>Irina Fendley</em> —<br>
-        MS Student in Computer Information Systems · Boston University
-      </h1>
-
-      <p>
-        MS Student in Computer Information Systems at Boston University (2026–2027), with studies in data engineering, databases, machine learning, and systems design.
-      </p>
-      <p>
-        I build projects independently, including data analytics dashboards, SQL-based analysis, and end-to-end pipelines. I also have prior experience in test automation projects using tools like Selenium WebDriver with Java, which strengthened my understanding of system workflows and data reliability. My goal is to work on real business problems through data - whether in analytics, engineering, or hybrid roles that connect both.
-      </p>
-      
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="https://github.com/IrinaEkb" target="_blank">
-          <!-- GitHub icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          GitHub
-        </a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/irinafendley/" target="_blank">LinkedIn</a>
-      </div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
     </div>
-
-<div class="hero-photo">
-    <img src="images/IMG_7481.png" alt="Irina Fendley">
-</div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════ PROJECTS ═══════════════════ -->
-<section id="projects">
-  <h2 class="section-title"><span>Projects</span></h2>
-  <div class="projects-grid">
+  </nav>
 
 
-    <!-- ── PROJECT 1 ── -->
+  <!-- ═══════════════════ HERO / ABOUT ═════════════════════ -->
+  <section id="about">
 
-<div class="project-card featured">
-  <div class="project-img">
-    <img src="images/humana_financial_data_pipeline.png" alt="Financial Data ETL Pipeline">
-  </div>
+    <div id="hero">
 
-  <div class="project-info">
-    <h3>Financial Data ETL Pipeline — Humana</h3>
+      <div class="hero-text">
 
-<p>
-  Built an end-to-end ETL pipeline that retrieves Humana's financial data from the SEC XBRL API, transforms and classifies financial metrics, stores the data in PostgreSQL, and generates structured Income Statement, Balance Sheet, and Cash Flow Statement datasets. The pipeline is automated with Apache Airflow and includes data validation and unit testing.
-</p>
+        <span class="hero-tag">Open to opportunities</span>
 
-<div class="stack-list">
-  <span class="stack-tag">Python</span>
-  <span class="stack-tag">Pandas</span>
-  <span class="stack-tag">PostgreSQL</span>
-  <span class="stack-tag">SQLAlchemy</span>
-  <span class="stack-tag">Apache Airflow</span>
-  <span class="stack-tag">Pytest</span>
-  <span class="stack-tag">SEC XBRL API</span>
-  <span class="stack-tag">Git</span>
-</div>
+        <h1>
+          Hi, I'm <em>Irina Fendley</em> —<br>
+          MS Student in Computer Information Systems · Boston University
+        </h1>
 
-<div class="project-links">
-  <a class="btn btn-primary" href="https://github.com/IrinaEkb/ETLFinancial" target="_blank">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
-    </svg>
-    View on GitHub
-  </a>
-</div>
-
-
-  </div>
-</div>
-
-
-   
-    <!-- ── PROJECT 2 ── -->
-    <div class="project-card">
-      
-      <div class="project-img">
-  <img src="images/screenshotBacketSize.png" alt="SQL Excel Tableau Analytics Project screenshot">
-      </div>
-      
-      <div class="project-info">
-        <h3><h3>SQL, Excel & Tableau Analytics Projects</h3></h3>
         <p>
-          This repository contains multiple end-to-end data analytics projects that solve real-world business problems using SQL, Excel, and Tableau. The projects cover data cleaning, exploratory data analysis, KPI development, dashboard creation, and business insight generation across a variety of business domains and datasets.
+          MS Student in Computer Information Systems at Boston University (2026–2027), with studies in data engineering, databases, machine learning, and systems design.
         </p>
-        <div class="stack-list">
-          <span class="stack-tag">SQL</span>
-          <span class="stack-tag">Excel</span>
-          <span class="stack-tag">Tableau</span>
-        </div>
-        <div class="project-links">
-          <a class="btn btn-primary" href="https://github.com/IrinaEkb/data-analysis-sql" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            View on GitHub
-          </a>
-        
-          <a class="btn btn-outline" href="reports/logistics_executive.pdf" target="_blank">
-  📄 View as PDF
-          </a>
-          
-        </div>
-      </div>
-    </div>
 
-
-
-     <!-- ── PROJECT 3 ── -->
-    <div class="project-card featured">
-      <div class="project-img">
-   
-        <img src="images/screenshotCreditScore.png" alt="Loan Default Project screenshot">
-        
-      </div>
-      <div class="project-info">
-        
-        <!-- <div class="project-badge">⭐ Featured Project</div> -->
-        
-        <h3>Loan Default Project</h3>
         <p>
-          This project explores the factors driving loan default risk and develops a predictive model to estimate borrower default probability. It also evaluates loan sizing and borrower rejection strategies to compare their impact on portfolio risk, expected losses, and profitability.
+          I build projects independently, including data analytics dashboards, SQL-based analysis, and end-to-end pipelines. I also have prior experience in test automation projects using tools like Selenium WebDriver with Java, which strengthened my understanding of system workflows and data reliability. My goal is to work on real business problems through data - whether in analytics, engineering, or hybrid roles that connect both.
         </p>
-        <div class="stack-list">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">Pandas</span>
-          <span class="stack-tag">NumPy</span>
-          <span class="stack-tag">Matplotlib</span>
-          <span class="stack-tag">Jupyter Notebook</span>
-          
-        </div>
-        <div class="project-links">
-          <a class="btn btn-primary" href="https://github.com/IrinaEkb/Loan_Default" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            View on GitHub
+
+        <div class="hero-buttons">
+
+          <a
+            class="btn btn-primary"
+            href="https://github.com/IrinaEkb"
+            target="_blank"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+            GitHub
           </a>
-          
-          <a class="btn btn-outline" href="reports/Credit-Risk-Analysis.pdf" target="_blank">
-  📄 View as PDF
+
+          <a
+            class="btn btn-outline"
+            href="https://www.linkedin.com/in/irinafendley/"
+            target="_blank"
+          >
+            LinkedIn
           </a>
-          
-          </a>
+
         </div>
       </div>
+
+
+      <div class="hero-photo">
+        <img src="images/IMG_7481.png" alt="Irina Fendley">
+      </div>
+
     </div>
 
-    
+  </section>
 
-    <!-- ── PROJECT 4 ── -->
-    <div class="project-card">
-      
-      <div class="project-img">
-  <img src="images/openMRS.png" alt="Data and QA Project">
-      </div>
-      
-      <div class="project-info">
-      <h3>OpenMRS Healthcare Platform</h3>
-      <p>
-  Contributed to an open-source Electronic Medical Record (EMR) platform used in 80 countries. Built an automated UI and API framework to verify backend logic and live workflows. Scripted automated checks for patient registration, visit tracking, and ID generation, running tests across Docker and demo environments to validate code quality.
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects">
+
+    <h2 class="section-title">
+      <span>Projects</span>
+    </h2>
+
+
+    <!-- ═══════════════════ BUSINESS & EXECUTIVE VIEW ═══════════════════ -->
+
+    <div class="projects-section">
+
+      <h3 class="project-view-title">
+        Business & Executive View
+      </h3>
+
+      <p class="project-view-description">
+        Business-focused summaries highlighting key findings, analysis, and insights without requiring a technical background.
       </p>
-        <div class="stack-list">
-          <span class="stack-tag">Java</span>
-          <span class="stack-tag">Selenium WebDriver</span>
-          <span class="stack-tag">testNG</span>
-          <span class="stack-tag">Maven</span>
-          <span class="stack-tag">restAssured</span>
-          <span class="stack-tag">Allure</span>
-          <span class="stack-tag">Apache POI</span>
-          <span class="stack-tag">Docker</span>
-          <span class="stack-tag">Azure DevOps</span>
-        </div>
-        <div class="project-links">
-          <a class="btn btn-primary" href="https://github.com/IrinaEkb/selenium-testng-pom" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            View on GitHub
+
+
+      <div class="business-projects">
+
+        <!-- ── BUSINESS PROJECT 1 ── -->
+
+        <div class="business-project">
+
+          <div class="business-project-info">
+
+            <h4>
+              Logistics Analysis — Executive Summary
+            </h4>
+
+            <p>
+              Business analysis of logistics data focused on identifying key patterns, performance drivers, and actionable insights.
+            </p>
+
+          </div>
+
+          <a
+            class="btn btn-outline"
+            href="reports/logistics_executive.pdf"
+            target="_blank"
+          >
+            📄 View PDF
           </a>
 
-          <a class="btn btn-outline" href="reports/OpenMRS-QA-Automation.pdf" target="_blank">
-  📄 View as PDF
-          </a>
-          
         </div>
+
+
+        <!-- ── BUSINESS PROJECT 2 ── -->
+
+        <div class="business-project">
+
+          <div class="business-project-info">
+
+            <h4>
+              Credit Risk Analysis — Executive Summary
+            </h4>
+
+            <p>
+              Analysis of loan default risk, borrower characteristics, portfolio risk, expected losses, and profitability.
+            </p>
+
+          </div>
+
+          <a
+            class="btn btn-outline"
+            href="reports/Credit-Risk-Analysis.pdf"
+            target="_blank"
+          >
+            📄 View PDF
+          </a>
+
+        </div>
+
+
+        <!-- ── BUSINESS PROJECT 3 ── -->
+
+        <div class="business-project">
+
+          <div class="business-project-info">
+
+            <h4>
+              OpenMRS QA Automation — Executive Summary
+            </h4>
+
+            <p>
+              Overview of automated testing and quality assurance work for a healthcare Electronic Medical Record platform.
+            </p>
+
+          </div>
+
+          <a
+            class="btn btn-outline"
+            href="reports/OpenMRS-QA-Automation.pdf"
+            target="_blank"
+          >
+            📄 View PDF
+          </a>
+
+        </div>
+
       </div>
+
     </div>
 
-  </div>
-</section>
 
-<div class="divider"></div>
+    <!-- ═══════════════════ TECHNICAL VIEW ═══════════════════ -->
 
-<!-- ═══════════════════ FOOTER ═══════════════════ -->
-<footer>
-  <p>Designed & built by <strong>Irina Fendley</strong> · <a href="https://github.com/IrinaEkb" target="_blank">GitHub</a></p>
-</footer>
+    <div class="projects-section">
+
+      <h3 class="project-view-title">
+        Technical View
+      </h3>
+
+      <p class="project-view-description">
+        Explore the code, technical implementation, tools, and methodology behind my projects.
+      </p>
+
+
+      <div class="technical-projects">
+
+
+        <!-- ── TECHNICAL PROJECT 1 ── -->
+
+        <div class="project-card featured">
+
+          <div class="project-img">
+            <img
+              src="images/humana_financial_data_pipeline.png"
+              alt="Financial Data ETL Pipeline"
+            >
+          </div>
+
+          <div class="project-info">
+
+            <h3>
+              Financial Data ETL Pipeline — Humana
+            </h3>
+
+            <p>
+              Built an end-to-end ETL pipeline that retrieves Humana's financial data from the SEC XBRL API, transforms and classifies financial metrics, stores the data in PostgreSQL, and generates structured Income Statement, Balance Sheet, and Cash Flow Statement datasets. The pipeline is automated with Apache Airflow and includes data validation and unit testing.
+            </p>
+
+            <div class="stack-list">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">Pandas</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">SQLAlchemy</span>
+              <span class="stack-tag">Apache Airflow</span>
+              <span class="stack-tag">Pytest</span>
+              <span class="stack-tag">SEC XBRL API</span>
+              <span class="stack-tag">Git</span>
+            </div>
+
+            <div class="project-links">
+
+              <a
+                class="btn btn-primary"
+                href="https://github.com/IrinaEkb/ETLFinancial"
+                target="_blank"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                View on GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ── TECHNICAL PROJECT 2 ── -->
+
+        <div class="project-card">
+
+          <div class="project-img">
+            <img
+              src="images/screenshotBacketSize.png"
+              alt="SQL Excel Tableau Analytics Project screenshot"
+            >
+          </div>
+
+          <div class="project-info">
+
+            <h3>
+              SQL, Excel & Tableau Analytics Projects
+            </h3>
+
+            <p>
+              This repository contains multiple end-to-end data analytics projects that solve real-world business problems using SQL, Excel, and Tableau. The projects cover data cleaning, exploratory data analysis, KPI development, dashboard creation, and business insight generation across a variety of business domains and datasets.
+            </p>
+
+            <div class="stack-list">
+              <span class="stack-tag">SQL</span>
+              <span class="stack-tag">Excel</span>
+              <span class="stack-tag">Tableau</span>
+            </div>
+
+            <div class="project-links">
+
+              <a
+                class="btn btn-primary"
+                href="https://github.com/IrinaEkb/data-analysis-sql"
+                target="_blank"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                View on GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ── TECHNICAL PROJECT 3 ── -->
+
+        <div class="project-card featured">
+
+          <div class="project-img">
+            <img
+              src="images/screenshotCreditScore.png"
+              alt="Loan Default Project screenshot"
+            >
+          </div>
+
+          <div class="project-info">
+
+            <h3>
+              Loan Default Project
+            </h3>
+
+            <p>
+              This project explores the factors driving loan default risk and develops a predictive model to estimate borrower default probability. It also evaluates loan sizing and borrower rejection strategies to compare their impact on portfolio risk, expected losses, and profitability.
+            </p>
+
+            <div class="stack-list">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">Pandas</span>
+              <span class="stack-tag">NumPy</span>
+              <span class="stack-tag">Matplotlib</span>
+              <span class="stack-tag">Jupyter Notebook</span>
+            </div>
+
+            <div class="project-links">
+
+              <a
+                class="btn btn-primary"
+                href="https://github.com/IrinaEkb/Loan_Default"
+                target="_blank"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                View on GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ── TECHNICAL PROJECT 4 ── -->
+
+        <div class="project-card">
+
+          <div class="project-img">
+            <img
+              src="images/openMRS.png"
+              alt="Data and QA Project"
+            >
+          </div>
+
+          <div class="project-info">
+
+            <h3>
+              OpenMRS Healthcare Platform
+            </h3>
+
+            <p>
+              Contributed to an open-source Electronic Medical Record (EMR) platform used in 80 countries. Built an automated UI and API framework to verify backend logic and live workflows. Scripted automated checks for patient registration, visit tracking, and ID generation, running tests across Docker and demo environments to validate code quality.
+            </p>
+
+            <div class="stack-list">
+              <span class="stack-tag">Java</span>
+              <span class="stack-tag">Selenium WebDriver</span>
+              <span class="stack-tag">testNG</span>
+              <span class="stack-tag">Maven</span>
+              <span class="stack-tag">restAssured</span>
+              <span class="stack-tag">Allure</span>
+              <span class="stack-tag">Apache POI</span>
+              <span class="stack-tag">Docker</span>
+              <span class="stack-tag">Azure DevOps</span>
+            </div>
+
+            <div class="project-links">
+
+              <a
+                class="btn btn-primary"
+                href="https://github.com/IrinaEkb/selenium-testng-pom"
+                target="_blank"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683 0-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                View on GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer>
+
+    <p>
+      Designed & built by
+      <strong>Irina Fendley</strong>
+      ·
+      <a
+        href="https://github.com/IrinaEkb"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </p>
+
+  </footer>
+
 
 </body>
 </html>
